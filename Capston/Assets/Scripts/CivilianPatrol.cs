@@ -9,7 +9,6 @@ public class CivilianPatrol : MonoBehaviour
     float speed = 3;
     int MoveSpotIndex;
     float dist;
-
     private void Start()
     {
         MoveSpotIndex = 0;
