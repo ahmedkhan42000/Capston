@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class CivilianPatrol : MonoBehaviour
 {
-
+    float speed = 1F;
+    float startWaitTime = 3F;
     public Transform[] moveSpots;
-    float speed = 3;
-    int MoveSpotIndex;
-    float dist;
+
+    private int randomSpot;
+    private float waitTime;
     private void Start()
     {
-        MoveSpotIndex = 0;
-        transform.LookAt(moveSpots[MoveSpotIndex].position);
+        randomSpot = Random.Range(0, moveSpots.Length);
+        transform.LookAt(moveSpots[randomSpot]);
     }
 
     private void Update()
@@ -21,17 +22,22 @@ public class CivilianPatrol : MonoBehaviour
     }
     void Patrol()
     {
-        dist = Vector3.Distance(transform.position, moveSpots[MoveSpotIndex].position);
-        if (dist < 1f)
+        transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
+
+        // Check if the distance between this and the movepoint is less than 0.2f (tollerange range)
+        if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
         {
-            MoveSpotIndex++;
-            if (MoveSpotIndex >= moveSpots.Length)
+            if (waitTime <= 0)
             {
-                MoveSpotIndex = 0;
+                randomSpot = Random.Range(0, moveSpots.Length);
+                transform.LookAt(moveSpots[randomSpot]);
+                waitTime = startWaitTime;
             }
-            transform.LookAt(moveSpots[MoveSpotIndex].position);
+            else
+            {
+                waitTime = -Time.deltaTime;
+            }
         }
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
 

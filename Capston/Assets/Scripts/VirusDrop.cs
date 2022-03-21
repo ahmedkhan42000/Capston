@@ -5,12 +5,18 @@ using UnityEngine;
 public class VirusDrop : MonoBehaviour
 {
     public GameObject VirusPf;
-    int StartTime = 0;
+    public GameObject DropPoint;
+
+    //GameManager gameManager;
+    int StartTime = 3;
     int RepeatRate = 5;
+    
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("DropVirus", StartTime, RepeatRate);
+        //gameManager = FindObjectOfType<GameManager>();
+        
+        InvokeRepeating("DropVirus", StartTime,RepeatRate);
     }
 
     // Update is called once per frame
@@ -19,6 +25,6 @@ public class VirusDrop : MonoBehaviour
     }
     void DropVirus()
     {
-       Instantiate(VirusPf, transform.position,Quaternion.identity);
+       Instantiate(VirusPf, DropPoint.transform.position,Quaternion.identity);
     }
 }
