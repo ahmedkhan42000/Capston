@@ -6,10 +6,9 @@ public class ConvertToEnemy : MonoBehaviour
 {
     public GameObject Indicator;
     VirusDrop VDScript;
-    // Start is called before the first frame update
+    public bool Infected = false;
     void Start()
     {
-        //VDScript = GameObject.Find("Character_Civilian1").GetComponent<VirusDrop>();
         VDScript = GetComponent<VirusDrop>();
     }
     void Update()
@@ -24,6 +23,7 @@ public class ConvertToEnemy : MonoBehaviour
             VDScript.enabled = true;
             Destroy(collision.gameObject);
             Indicator.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
+            Infected = true;
         }
     }
 }

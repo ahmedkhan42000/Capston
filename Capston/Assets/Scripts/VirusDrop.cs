@@ -7,14 +7,11 @@ public class VirusDrop : MonoBehaviour
     public GameObject VirusPf;
     public GameObject DropPoint;
 
-    //GameManager gameManager;
-    int StartTime = 3;
-    int RepeatRate = 5;
+    int StartTime = 2;
+    int RepeatRate = 3;
     
-    // Start is called before the first frame update
     void Start()
     {
-        //gameManager = FindObjectOfType<GameManager>();
         
         InvokeRepeating("DropVirus", StartTime,RepeatRate);
     }

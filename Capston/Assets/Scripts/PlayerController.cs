@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Camera Cam;
-    int playerMovementSpeed = 5;
-    //Rigidbody rb;
+    int playerMovementSpeed = 2;
     Animator animator;
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
     void Update()
@@ -46,13 +44,13 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Shoot", false);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-                transform.Translate(Vector3.back * playerMovementSpeed * Time.deltaTime);
-        }
+        //if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        //{
+        //        transform.Translate(Vector3.back * playerMovementSpeed * Time.deltaTime);
+        //}
         
-
-        Ray ray = Cam.ScreenPointToRay(Input.mousePosition);  //PlayerRotation Code
+        /***Player Rotaion Using Mouse Point***/
+        Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
