@@ -2763,6 +2763,8 @@ GameObject:
   - component: {fileID: 919132149439442672}
   - component: {fileID: 919132149439442673}
   - component: {fileID: 919132149439442680}
+  - component: {fileID: 4485321432864896882}
+  - component: {fileID: 2142187605}
   m_Layer: 0
   m_Name: Character_Civilian1
   m_TagString: Civilian
@@ -2844,7 +2846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a49c5e7a869744b86237514c5ea51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VirusPf: {fileID: 1113082162743011969, guid: 4ccede918b6febe40adc2d37815e50b0, type: 3}
+  VirusPf: {fileID: 2527178181500039290, guid: 1bc46cefe81055844a701202fb05a215, type: 3}
   DropPoint: {fileID: 1871467015}
 --- !u!114 &8555319719151885355
 MonoBehaviour:
@@ -2915,6 +2917,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442805cddf443a24abb9f5526822cf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Indicator: {fileID: 8555319719256593804}
+--- !u!114 &4485321432864896882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825911936605150414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bdfdc1d3bb30b41aef98d0661d98b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2142187605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825911936605150414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e460ad72a00b0bb40b6d9fe35927fb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vaccination_Level: 0
+  Indicator: {fileID: 8555319719256593804}
 --- !u!1 &9109500901604492791
 GameObject:
   m_ObjectHideFlags: 0

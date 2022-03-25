@@ -20,11 +20,11 @@ public class PlayerBringEnemy : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //Enemy follows player Code
         enemyAiScript = collision.gameObject.GetComponent<EnemyFollowPlayer>();
         convToEnScript = collision.gameObject.GetComponent<ConvertToEnemy>();
         civPatScript = collision.gameObject.GetComponent<CivilianPatrol>();
         civAnimConScript = collision.gameObject.GetComponent<CivilianAnimControl>();
-        //animator = collision.gameObject.GetComponent<Animator>();
         if (collision.gameObject.tag == "Civilian" && convToEnScript.Infected == false)
         {
             enemyAiScript.enabled = true;

@@ -9,19 +9,24 @@ public class VirusDrop : MonoBehaviour
 
     int StartTime = 2;
     int RepeatRate = 3;
-    
+
+    VirusDrop virusDropScript;
     void Start()
     {
-        
-        InvokeRepeating("DropVirus", StartTime,RepeatRate);
+        virusDropScript = GetComponent<VirusDrop>();
+        //InvokeRepeating("DropVirus", StartTime,RepeatRate);
+        StartCoroutine("DropVirus");
     }
-
-    // Update is called once per frame
     void Update()
     {
+        
     }
-    void DropVirus()
+    IEnumerator DropVirus()
     {
-       Instantiate(VirusPf, DropPoint.transform.position,Quaternion.identity);
+        while (virusDropScript.enabled == true)
+        {
+            Instantiate(VirusPf, DropPoint.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(3f);
+        }
     }
 }

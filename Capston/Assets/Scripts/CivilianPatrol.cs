@@ -8,7 +8,6 @@ public class CivilianPatrol : MonoBehaviour
     float startWaitTime = 3F;
     public Transform[] moveSpots;
 
-
     private int randomSpot;
     private float waitTime;
     private void Start()
@@ -42,5 +41,6 @@ public class CivilianPatrol : MonoBehaviour
             }
         }
     }
+    
 }
 

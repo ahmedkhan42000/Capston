@@ -5,14 +5,11 @@ using UnityEngine;
 public class CameraMov : MonoBehaviour
 {
     public GameObject Player;
-    Vector3 Offset =new Vector3(0.380030394f, 5.72367907f, -8.17488384f);
-    // Start is called before the first frame update
+    Vector3 Offset =new Vector3(-0.131711826f, 5.51103306f, -7.56623745f);
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         

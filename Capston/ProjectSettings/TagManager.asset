@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Virus
   - Civilian
+  - RoomDoor
   layers:
   - Default
   - TransparentFX

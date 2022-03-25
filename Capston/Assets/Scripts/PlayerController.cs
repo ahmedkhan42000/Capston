@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Camera Cam;
     int playerMovementSpeed = 2;
+    int playerFastMovementSpeed = 3;
     Animator animator;
     void Start()
     {
@@ -17,18 +18,18 @@ public class PlayerController : MonoBehaviour
     }
     private void Movement()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * playerMovementSpeed * Time.deltaTime);
             animator.SetFloat("Speed", 0.2f);
         }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
             animator.SetFloat("Speed", 0f);
         }
-        if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(Vector3.forward * playerMovementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * playerFastMovementSpeed * Time.deltaTime);
             animator.SetBool("Run", true);
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -43,12 +44,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("Shoot", false);
         }
-
-        //if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        //{
-        //        transform.Translate(Vector3.back * playerMovementSpeed * Time.deltaTime);
-        //}
-        
         /***Player Rotaion Using Mouse Point***/
         Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
