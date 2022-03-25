@@ -17,7 +17,7 @@ public class CivilianAnimControl : MonoBehaviour
     void CivilianAnimControlor()
     {
         
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             animator.SetInteger("Speed", 1);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot_Practice : MonoBehaviour
 {
-    int Shoot_damage_Amount = 10;
+    int Shoot_damage_Amount = 50;
     public GameObject ShootPoint;
     // Start is called before the first frame update
     void Start()

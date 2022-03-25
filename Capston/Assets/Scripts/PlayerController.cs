@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Camera Cam;
-    int playerMovementSpeed = 2;
-    int playerFastMovementSpeed = 3;
+    float playerMovementSpeed = 0.5f;
+    float playerFastMovementSpeed = 1f;
     Animator animator;
     void Start()
     {

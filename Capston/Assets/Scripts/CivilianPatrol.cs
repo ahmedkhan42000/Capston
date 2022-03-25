@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CivilianPatrol : MonoBehaviour
 {
-    float speed = 1F;
+    float speed = 1.5F;
     float startWaitTime = 3F;
     public Transform[] moveSpots;
 
