@@ -6,10 +6,14 @@ public class Shoot_Practice : MonoBehaviour
 {
     int Shoot_damage_Amount = 50;
     public GameObject ShootPoint;
-    // Start is called before the first frame update
+    public GameObject ShootVirus_ParticleEffect;
+
+    public delegate void UpdateScore_OnVirusHit_DL();
+    public UpdateScore_OnVirusHit_DL updateScore_OnVirusHit_DL;
+
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,14 +33,18 @@ public class Shoot_Practice : MonoBehaviour
                 Debug.Log(hitinfo.transform.name);
                 if (hitinfo.transform.tag == "Virus")
                 {
+                    updateScore_OnVirusHit_DL?.Invoke();
+                    Instantiate(ShootVirus_ParticleEffect, hitinfo.transform.position, hitinfo.transform.rotation);
                     Destroy(hitinfo.collider.gameObject);
                 }
                 if (hitinfo.transform.tag == "Civilian" && hitinfo.transform.GetComponent<VirusDrop>().isActiveAndEnabled)
                 {
+                    
                     var health = hitinfo.collider.GetComponent<HealthManager>();
                     health.TakeDamage(Shoot_damage_Amount);
                 }
             }
         }
     }
+   
 }

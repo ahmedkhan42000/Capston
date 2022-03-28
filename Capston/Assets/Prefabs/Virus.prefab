@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec8ce84c44ea7e418cb909570c69cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestoryVirusTime: 10
+  VirusDestroy_ParticleEffect: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 3}
+  DestoryVirusTime: 3
 --- !u!54 &-4807838795666692754
 Rigidbody:
   m_ObjectHideFlags: 0

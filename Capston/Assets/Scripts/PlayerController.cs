@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Camera Cam;
-    float playerMovementSpeed = 0.5f;
-    float playerFastMovementSpeed = 1f;
+    //public GameObject Fire_ParticleEffect;
+    public AudioSource FireAudio;
+    //public Transform ShootPoint;
+
+    float playerMovementSpeed = 1f;
+    float playerFastMovementSpeed = 2f;
     Animator animator;
     void Start()
     {
@@ -39,10 +43,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             animator.SetBool("Shoot",true);
+            //Instantiate(Fire_ParticleEffect,ShootPoint.transform.position,ShootPoint.transform.rotation);
+
+                FireAudio.Play();
+
+            
         }
+      
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             animator.SetBool("Shoot", false);
+       
+            FireAudio.Stop();
         }
         /***Player Rotaion Using Mouse Point***/
         Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
